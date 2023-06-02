@@ -3,8 +3,18 @@
 ## Introduction
 
 This repository is created to track my progress in solving LeetCode problems. Each problem that I solve will be listed here, along with the solution and any relevant explanations or insights. This will serve as a record of my problem-solving journey and a resource for others who are interested in learning from my solutions.
+[Description](#description)
+## Progress
 
-## Problem 1: Roman to Integer
+| Index      | Problem                                   | Solution                                                                          |
+| ---------- | ----------------------------------------- | --------------------------------------------------------------------------------- |
+| [#1](#1)   | Roman to Integer                          | [Link](https://leetcode.com/problems/roman-to-integer/)                           |
+| [#2](#2)   | Check If Two String Arrays are Equivalent | [Link](https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/)  |
+
+***
+
+### #1
+## Problem 1: Roman-To-Integer 
 
 - **Problem Description:**
   Given a roman numeral, convert it to an integer. The input is guaranteed to be within the range from 1 to 3999.
@@ -52,16 +62,38 @@ function romanToInt(str) {
 
 - **Explanation:**
   I have implemented a function `romanToInt` in JavaScript that converts a given roman numeral string to its corresponding integer value. I use an object `romanNumerals` to store the values of each roman numeral. Starting from the end of the input string, I iterate through each character and check its corresponding value. If the current value is greater than or equal to the previous value, I add it to the result. Otherwise, I subtract it from the result. Finally, I return the result.
+  
+***
+### #2
+## Problem 2: Check If Two String Arrays are Equivalent
+
+- **Problem Description:**
+  Given two string arrays `word1` and `word2`, return `true` if the two arrays represent the same string, and `false` otherwise. A string is represented by an array if the array elements concatenated in order forms the string.
+
+- **Example:**
+
+```
+Input: word1 = ["ab", "c"], word2 = ["a", "bc"]
+Output: true
+Explanation: Concatenating the elements of word1 in order gives "ab" + "c" = "abc", which is the same as word2.
+```
+
+- **Solution:**
+
+```js
+var arrayStringsAreEqual = function(word1, word2) {
+    const str1 = word1.join("");
+    const str2 = word2.join("");
+    return str1 === str2;
+};
+```
+
+- **Explanation:**
+  The `arrayStringsAreEqual` function takes two string arrays `word1` and `word2`. It joins the elements of each array into two separate strings `str1` and `str2` using the `join("")` method. It then compares `str1` and `str2` using the strict equality operator `===` to determine if they are equal. The function returns `true` if they are equal and `false` otherwise.
 
 ## Contribution
 
 If you have any suggestions, improvements, or alternative solutions for the listed problems, feel free to contribute by submitting a pull request. Your contributions are highly appreciated.
-
-## Progress
-
-| Problem             | Solution                                                |
-| ------------------- | ------------------------------------------------------- |
-| 1. Roman to Integer | [Link](https://leetcode.com/problems/roman-to-integer/) |
 
 **Note:** The table above will be updated as I solve more problems.
 
