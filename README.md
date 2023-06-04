@@ -4,7 +4,7 @@
 ## Introduction
 
 This repository is created to track my progress in solving LeetCode problems. Each problem that I solve will be listed here, along with the solution and any relevant explanations or insights. This will serve as a record of my problem-solving journey and a resource for others who are interested in learning from my solutions.
-[Description](#description)
+[Description](#description) 
 
 ## Progress
 
@@ -18,6 +18,7 @@ This repository is created to track my progress in solving LeetCode problems. Ea
 | [#6](#6)   | Power of Two                                 | [Link](https://leetcode.com/problems/power-of-two/)                                |
 | [#7](#7)   | Number of Days Between Two Dates             | [Link](https://leetcode.com/problems/number-of-days-between-two-dates/)            |
 | [#8](#8)   | Maximum Product Difference Between Two Pairs | [Link](https://leetcode.com/problems/maximum-product-difference-between-two-pairs/)|
+| [#9](#9)   | Merge Strings Alternately                    | [Link](https://leetcode.com/problems/merge-strings-alternately)                    |
 
 ***
 
@@ -343,6 +344,61 @@ var maxProductDifference = function(nums) {
   The `maxProductDifference` function takes an integer array `nums` as
 
  input. It first sorts the array in ascending order using the `sort` method with a comparison function `(a, b) => a - b`. After sorting, the maximum difference between the product of two integers can be obtained by subtracting the product of the first two elements from the product of the last two elements. The function returns the calculated difference.
+
+### #9
+
+### Problem 9: Merge Strings Alternately
+
+- **Problem Description:**
+  You are given two strings, `word1` and `word2`. Merge the strings by adding letters in alternating order, starting with `word1`. If one of the strings is longer than the other, append the remaining letters of the longer string at the end of the merged string.
+
+  Return the merged string.
+
+- **Example:**
+
+```plaintext
+Input: word1 = "abc", word2 = "def"
+Output: "adbecf"
+Explanation: The merged string will be "a" + "d" + "b" + "e" + "c" + "f".
+```
+
+```plaintext
+Input: word1 = "ab", word2 = "xyz"
+Output: "axbyz"
+Explanation: The merged string will be "a" + "x" + "b" + "y" + "z".
+```
+
+- **Solution:**
+
+```js
+/**
+ * @param {string} word1
+ * @param {string} word2
+ * @return {string}
+ */
+var mergeAlternately = function(word1, word2) {
+    var merged = "";
+    var i = 0, j = 0;
+    while (i < word1.length && j < word2.length) {
+        merged += word1[i] + word2[j];
+        i++;
+        j++;
+    }
+    merged += word1.slice(i) + word2.slice(j);
+    return merged;
+};
+```
+
+- **Explanation:**
+  The `mergeAlternately` function takes two strings, `word1` and `word2`, as input and merges them alternately. It initializes an empty string `merged` to store the merged result. Then, it uses two pointers `i` and `j` to iterate over `word1` and `word2` respectively.
+
+  Inside the while loop, it appends the characters at the current positions of `i` and `j` to the `merged` string. Then, it increments both `i` and `j` by 1.
+
+  After the while loop, it checks if there are any remaining characters in `word1` or `word2`. If there are, it appends the remaining characters to the `merged` string using `slice` to extract the substrings starting from the current positions of `i` and `j`.
+
+  Finally, it returns the merged string.
+
+This solution effectively merges the strings alternately by iterating over the characters of both strings and appending them to the result string in the desired order.
 
 ## Contribution
 
