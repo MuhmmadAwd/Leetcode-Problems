@@ -19,6 +19,7 @@ This repository is created to track my progress in solving LeetCode problems. Ea
 | [#7](#7)   | Number of Days Between Two Dates             | [Link](https://leetcode.com/problems/number-of-days-between-two-dates/)            |
 | [#8](#8)   | Maximum Product Difference Between Two Pairs | [Link](https://leetcode.com/problems/maximum-product-difference-between-two-pairs/)|
 | [#9](#9)   | Merge Strings Alternately                    | [Link](https://leetcode.com/problems/merge-strings-alternately)                    |
+| [#10](#10) | Remove Duplicates from Sorted Array          | [Link](https://leetcode.com/problems/remove-duplicates-from-sorted-array)          |
 
 ***
 
@@ -399,6 +400,62 @@ var mergeAlternately = function(word1, word2) {
   Finally, it returns the merged string.
 
 This solution effectively merges the strings alternately by iterating over the characters of both strings and appending them to the result string in the desired order.
+
+### #10
+
+### Problem 10 : Remove Duplicates from Sorted Array
+
+- **Problem Description:**
+  Given a sorted array `nums`, remove the duplicates in-place such that each element appears only once and returns the new length. Do not allocate extra space for another array; you must do this by modifying the input array in-place with O(1) extra memory.
+
+- **Example:**
+
+```plaintext
+Input: nums = [1,1,2]
+Output: 2
+Explanation: The function should modify the array to return the new length and remove the duplicates. The modified array will be [1, 2], and the length is 2.
+```
+
+```plaintext
+Input: nums = [0,0,1,1,1,2,2,3,3,4]
+Output: 5
+Explanation: The function should modify the array to return the new length and remove the duplicates. The modified array will be [0, 1, 2, 3, 4], and the length is 5.
+```
+
+- **Solution:**
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    if (nums.length === 0) {
+        return 0;
+    }
+    
+    var i = 0;
+    for (var j = 1; j < nums.length; j++) {
+        if (nums[j] !== nums[i]) {
+            i++;
+            nums[i] = nums[j];
+        }
+    }
+    
+    return i + 1;
+};
+```
+
+- **Explanation:**
+  The `removeDuplicates` function takes an input array `nums` and removes the duplicates in-place. It uses two pointers, `i` and `j`, where `i` represents the position to store the next non-duplicate element, and `j` iterates over the array.
+
+  Initially, it checks if the length of `nums` is 0. If it is, it means there are no elements, and the function returns 0.
+
+  Inside the for loop, it compares `nums[j]` with `nums[i]` to check for duplicates. If `nums[j]` is different from `nums[i]`, it means a new non-duplicate element is found. In that case, it increments `i`, updates `nums[i]` with the new element, and proceeds to the next iteration.
+
+  The loop continues until all elements are processed. Finally, the function returns `i + 1`, which represents the length of the modified array without duplicates.
+
+This solution effectively removes duplicates from the sorted array in-place by keeping track of two pointers and updating the array elements accordingly.
 
 ## Contribution
 
