@@ -8,7 +8,7 @@ This repository is created to track my progress in solving LeetCode problems. Ea
 
 ## Progress
 
-| solution   | Problem                                      | problem Link                                                                       |
+| Solution   | Problem                                      | Problem Link                                                                       |
 | ---------- | -------------------------------------------- | ---------------------------------------------------------------------------------- |
 | [#1](#1)   | Roman to Integer                             | [Link](https://leetcode.com/problems/roman-to-integer/)                            |
 | [#2](#2)   | Check If Two String Arrays are Equivalent    | [Link](https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/)   |
