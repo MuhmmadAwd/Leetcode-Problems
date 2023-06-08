@@ -20,6 +20,8 @@ This repository is created to track my progress in solving LeetCode problems. Ea
 | [#8](#8)   | Maximum Product Difference Between Two Pairs | [Link](https://leetcode.com/problems/maximum-product-difference-between-two-pairs/)|
 | [#9](#9)   | Merge Strings Alternately                    | [Link](https://leetcode.com/problems/merge-strings-alternately)                    |
 | [#10](#10) | Remove Duplicates from Sorted Array          | [Link](https://leetcode.com/problems/remove-duplicates-from-sorted-array)          |
+| [#11](#11) | Rotate Image | [Link](https://leetcode.com/problems/rotate-image/)          |
+| [#12](#12) | Partitioning Into Minimum Number Of Deci-Binary Numbers | [Link](https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/description/)          |
 
 ***
 
@@ -456,6 +458,77 @@ var removeDuplicates = function(nums) {
   The loop continues until all elements are processed. Finally, the function returns `i + 1`, which represents the length of the modified array without duplicates.
 
 This solution effectively removes duplicates from the sorted array in-place by keeping track of two pointers and updating the array elements accordingly.
+
+Sure! Here are the problem statements, solutions, and explanations for problems 48 and 1689:
+
+### #11
+
+### Problem 11: Rotate Image
+
+- **Problem Description:**
+  You are given an `n x n` 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+
+  You have to rotate the image **in-place**, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
+
+- **Example:**
+
+  ![Rotate Image Example](https://assets.leetcode.com/uploads/2020/08/28/mat1.jpg)
+  
+  ```
+  Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+  Output: [[7,4,1],[8,5,2],[9,6,3]]
+  ```
+
+- **Solution:**
+
+```js
+var rotate = function(matrix) {
+    
+    for(let i=0;i<matrix.length;i++){
+        for(let j = i+1;j<matrix.length;j++){
+            [matrix[i][j],matrix[j][i]] = [matrix[j][i],matrix[i][j]]
+        }
+        matrix[i].reverse()
+    }
+
+};
+```
+
+- **Explanation:**
+  The `rotate` function takes a 2D matrix as input and rotates the image by 90 degrees clockwise. To achieve this, we first transpose the matrix by swapping elements along the diagonal. Then, we reverse each row of the transposed matrix. This in-place operation modifies the input matrix directly.
+
+---
+### #12
+### Problem 12: Partitioning Into Minimum Number Of Deci-Binary Numbers
+
+- **Problem Description:**
+  A decimal number is called **deci-binary** if each of its digits is either '0' or '1' without any leading zeros. For example, 101 and 1100 are deci-binary, while 112 and 3001 are not.
+
+  Given a string `n` that represents a positive integer, return the **minimum** number of positive deci-binary numbers needed so that they sum up to `n`.
+
+- **Example:**
+
+  ```
+  Input: n = "32"
+  Output: 3
+  Explanation: 32 can be represented as "11111" + "11" + "10".
+  ```
+
+- **Solution:**
+
+```js
+var minPartitions = function(n) {
+    const arr = n.split("")
+return Math.max(...arr)
+};
+```
+
+- **Explanation:**
+  The `minPartitions` function takes a string `n` as input and returns the minimum number of positive deci-binary numbers needed to sum up to `n`. Since each deci-binary digit can only be '0' or '1', the largest digit in `n` determines the number of deci-binary numbers needed. We convert `n` to an integer and return the maximum digit using the `max` function.
+
+---
+
+These are the solutions for problems 48 and 1689. Let me know if you have any further questions!
 
 ## Contribution
 
