@@ -22,7 +22,7 @@ This repository is created to track my progress in solving LeetCode problems. Ea
 | [#10](#10) | Remove Duplicates from Sorted Array          | [Link](https://leetcode.com/problems/remove-duplicates-from-sorted-array)          |
 | [#11](#11) | Rotate Image | [Link](https://leetcode.com/problems/rotate-image/)          |
 | [#12](#12) | Partitioning Into Minimum Number Of Deci-Binary Numbers | [Link](https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/description/)          |
-
+| [#13](#13) | Valid Palindrome                             | [Link](https://leetcode.com/problems/valid-palindrome/)                           |
 ***
 
 ### #1
@@ -74,7 +74,7 @@ function romanToInt(str) {
 
 - **Explanation:**
   I have implemented a function `romanToInt` in JavaScript that converts a given roman numeral string to its corresponding integer value. I use an object `romanNumerals` to store the values of each roman numeral. Starting from the end of the input string, I iterate through each character and check its corresponding value. If the current value is greater than or equal to the previous value, I add it to the result. Otherwise, I subtract it from the result. Finally, I return the result.
-
+---
 ### #2
 ## Problem 2: Check If Two String Arrays are Equivalent
 
@@ -103,7 +103,7 @@ var arrayStringsAreEqual = function(word1, word2) {
 
 - **Explanation:**
   The `arrayStringsAreEqual` function takes two string arrays `word1` and `word2`. It joins the elements of each array into two separate strings `str1` and `str2` using the `join("")` method. It then compares `str1` and `str2` using the strict equality operator `===` to determine if they are equal. The function returns `true` if they are equal and `false` otherwise.
-
+---
 ### #3
 ## Problem 3: Design Parking System
 
@@ -158,7 +158,7 @@ ParkingSystem.prototype.addCar = function(carType) {
 
 - **Explanation:**
   The `ParkingSystem` class is implemented with a constructor that takes the number of available slots for each car type (`big`, `medium`, and `small`). The `addCar` method checks if there is an available slot for the given `carType`. If there are available slots, it decreases the count for that car type and returns `true`. Otherwise, it returns `false` indicating that there is no available slot for the car type.
-
+---
 ### #4
 ## Problem 4: Shuffle the Array
 
@@ -199,7 +199,7 @@ var shuffle = function(nums, n) {
 
 - **Explanation:**
   The `shuffle` function takes an array `nums` and a positive integer `n` as input. It creates two new arrays `x` and `y` by slicing `nums` into two parts. It then iterates `n` times and pushes the `i`-th element from `x` and `y` into a new array `newArr`. Finally, it returns `newArr` which contains the shuffled elements.
-
+---
 ### #5
 ## Problem 5: Defanging an IP Address
 
@@ -229,7 +229,7 @@ var defangIPaddr = function(address) {
 
 - **Explanation:**
   The `defangIPaddr` function takes a string `address` as input. It uses the `replaceAll` method to replace all occurrences of a period (`.`) in the address with `"[.]"`. Finally, it returns the defanged IP address.
-
+---
 ### #6
 ## Problem 6: Power of Two
 
@@ -261,7 +261,7 @@ var isPowerOfTwo = function(n) {
 
 - **Explanation:**
   The `isPowerOfTwo` function takes an integer `n` as input. It checks if the logarithm base 2 of `n` is an integer using `Number.isInteger(Math.log2(n))`. If the logarithm is an integer, it means that `n` is a power of two. The function returns `true` in that case, and `false` otherwise.
-
+---
 ### #7
 ## Problem 7: Number of Days Between Two Dates
 
@@ -297,7 +297,7 @@ var daysBetweenDates = function(date1, date2) {
 
 - **Explanation:**
   The `daysBetweenDates` function takes two date strings `date1` and `date2` as input. It converts the date strings into `Date` objects and calculates the difference in milliseconds between the two dates. This difference is then divided by the number of milliseconds in a day to obtain the number of days. The function returns the absolute value of the rounded number of days.
-
+---
 ### #8
 ## Problem 8: Maximum Product Difference Between Two Pairs
 
@@ -347,6 +347,8 @@ var maxProductDifference = function(nums) {
   The `maxProductDifference` function takes an integer array `nums` as
 
  input. It first sorts the array in ascending order using the `sort` method with a comparison function `(a, b) => a - b`. After sorting, the maximum difference between the product of two integers can be obtained by subtracting the product of the first two elements from the product of the last two elements. The function returns the calculated difference.
+ 
+---
 
 ### #9
 
@@ -401,7 +403,7 @@ var mergeAlternately = function(word1, word2) {
 
   Finally, it returns the merged string.
 
-This solution effectively merges the strings alternately by iterating over the characters of both strings and appending them to the result string in the desired order.
+---
 
 ### #10
 
@@ -459,7 +461,7 @@ var removeDuplicates = function(nums) {
 
 This solution effectively removes duplicates from the sorted array in-place by keeping track of two pointers and updating the array elements accordingly.
 
-Sure! Here are the problem statements, solutions, and explanations for problems 48 and 1689:
+---
 
 ### #11
 
@@ -528,7 +530,40 @@ return Math.max(...arr)
 
 ---
 
-These are the solutions for problems 48 and 1689. Let me know if you have any further questions!
+### #13
+## Problem 13: Valid Palindrome
+
+- **Problem Description:**
+  Given a string `s`, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+
+- **Example:**
+
+```
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+```
+
+- **Solution:**
+
+```js
+function isPalindrome(s) {
+  const alphanumeric = s.toLowerCase().match(/[a-z0-9]/g);
+
+  if (alphanumeric === null) {
+    return true;
+  }
+
+  const reversedArr = alphanumeric.slice().reverse();
+
+  return alphanumeric.join("") === reversedArr.join("");
+}
+```
+
+- **Explanation:**
+  The function `isPalindrome` checks if the given string `s` is a valid palindrome. It converts the string to lowercase and uses a regular expression to match alphanumeric characters. If there are no alphanumeric characters in the string, it returns `true` as it is considered a palindrome. Otherwise, it creates a reversed copy of the alphanumeric characters and compares it with the original to determine if it is a palindrome. The function returns `true` if it is a palindrome and `false` otherwise.
+```
+
 
 ## Contribution
 
