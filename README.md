@@ -23,6 +23,8 @@ This repository is created to track my progress in solving LeetCode problems. Ea
 | [#11](#11) | Rotate Image | [Link](https://leetcode.com/problems/rotate-image/)          |
 | [#12](#12) | Partitioning Into Minimum Number Of Deci-Binary Numbers | [Link](https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/description/)          |
 | [#13](#13) | Valid Palindrome                             | [Link](https://leetcode.com/problems/valid-palindrome/)                           |
+| [#14](#14)   | Two Sum                           | [Link](https://leetcode.com/problems/two-sum/)                   |
+
 ***
 
 ### #1
@@ -562,8 +564,56 @@ function isPalindrome(s) {
 
 - **Explanation:**
   The function `isPalindrome` checks if the given string `s` is a valid palindrome. It converts the string to lowercase and uses a regular expression to match alphanumeric characters. If there are no alphanumeric characters in the string, it returns `true` as it is considered a palindrome. Otherwise, it creates a reversed copy of the alphanumeric characters and compares it with the original to determine if it is a palindrome. The function returns `true` if it is a palindrome and `false` otherwise.
-```
 
+
+---
+### #14
+## Problem 14: Tow Sum
+
+- **Problem Description:**
+  Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.
+
+- **Example:**
+
+  ```
+  Input: nums = [2,7,11,15], target = 9
+  Output: [0,1]
+  Explanation: The sum of 2 and 7 is 9. Therefore, the indices of the two numbers are 0 and 1.
+
+  Input: nums = [3,2,4], target = 6
+  Output: [1,2]
+
+  Input: nums = [3,3], target = 6
+  Output: [0,1]
+  ```
+
+- **Solution:**
+
+  ```javascript
+  /**
+   * @param {number[]} nums
+   * @param {number} target
+   * @return {number[]}
+   */
+  var twoSum = function(nums, target) {
+      const map = new Map();
+  
+      for (let i = 0; i < nums.length; i++) {
+          const complement = target - nums[i];
+  
+          if (map.has(complement)) {
+              return [map.get(complement), i];
+          }
+  
+          map.set(nums[i], i);
+      }
+  
+      return [];
+  };
+  ```
+
+- **Explanation:**
+  The `twoSum` function takes an array of integers `nums` and an integer `target` as input. It uses a hash map to store the complement of each number encountered during the iteration. For each number `num` in `nums`, it calculates the complement as `complement = target - num`. If the complement exists in the hash map, it means that the pair of numbers that sum up to the target has been found. The function returns the indices of the two numbers as `[map.get(complement), i]`. If no such pair is found, an empty array `[]` is returned.
 
 ## Contribution
 
