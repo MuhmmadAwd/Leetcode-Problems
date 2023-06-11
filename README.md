@@ -20,10 +20,10 @@ This repository is created to track my progress in solving LeetCode problems. Ea
 | [#8](#8)   | Maximum Product Difference Between Two Pairs | [Link](https://leetcode.com/problems/maximum-product-difference-between-two-pairs/)|
 | [#9](#9)   | Merge Strings Alternately                    | [Link](https://leetcode.com/problems/merge-strings-alternately)                    |
 | [#10](#10) | Remove Duplicates from Sorted Array          | [Link](https://leetcode.com/problems/remove-duplicates-from-sorted-array)          |
-| [#11](#11) | Rotate Image | [Link](https://leetcode.com/problems/rotate-image/)          |
+| [#11](#11) | Rotate Image                                 | [Link](https://leetcode.com/problems/rotate-image/)                                |
 | [#12](#12) | Partitioning Into Minimum Number Of Deci-Binary Numbers | [Link](https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/description/)          |
-| [#13](#13) | Valid Palindrome                             | [Link](https://leetcode.com/problems/valid-palindrome/)                           |
-| [#14](#14)   | Two Sum                           | [Link](https://leetcode.com/problems/two-sum/)                   |
+| [#13](#13) | Valid Palindrome                             | [Link](https://leetcode.com/problems/valid-palindrome/)                            |
+| [#14](#14)   | Two Sum                                    | [Link](https://leetcode.com/problems/two-sum/)                                     |
 
 ***
 
